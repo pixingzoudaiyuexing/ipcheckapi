@@ -100,7 +100,7 @@ install_ipcheckapi() {
   asset="ipcheckapi-linux-${arch}"
   base="https://github.com/${REPO}/releases/latest/download"
   tmpdir="$(mktemp -d)"
-  trap 'rm -rf "$tmpdir"' EXIT
+  trap "rm -rf '$tmpdir'" EXIT
 
   fetch_with_fallback "${base}/${asset}" "${tmpdir}/${asset}"
   fetch_with_fallback "${base}/SHA256SUMS" "${tmpdir}/SHA256SUMS"
